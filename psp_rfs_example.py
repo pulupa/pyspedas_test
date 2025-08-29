@@ -1,5 +1,3 @@
-#import pyspedas
-
 import pyspedas.projects.psp as psp
 from pyspedas import tnames, tplot, options, get_data
 
