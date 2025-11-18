@@ -24,7 +24,7 @@ psp.fields(trange=trange, level = 'l1',
            datatype='ephem_spp_VSO',
            time_clip=True,
            username = environ.get('USER'), 
-           password = environ.get('PSP_STAGING_PW'), last_version=True)
+           password = environ.get('PSP_STAGING_PW'))
 
 tplot(['psp_fld_l3_rfs_hfr_auto_averages_ch0_V1V2',
        'psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V2',
