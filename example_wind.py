@@ -7,7 +7,8 @@ trange = ['2019-04-02/15:00', '2019-04-02/16:30']
 
 wind.waves(trange=trange, time_clip=True, datatype='rad2')
 wind.waves(trange=trange, time_clip=True, datatype='rad1')
+wind.waves(trange=trange, time_clip=True, datatype='tnr')
 
 print(tplot_names())
 
-tplot('wi_l2_wav_rad?_PSD_V2_Z')
+tplot(['wi_l2_wav_rad?_PSD_V2_Z','wi_l2_wav_tnr_PSD_V2'])
