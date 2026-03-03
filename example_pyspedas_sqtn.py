@@ -1,11 +1,19 @@
 import pyspedas.projects.psp as psp
 from pyspedas import tnames, tplot, options, get_data
 
-psp.fields(trange=['2022-05-15','2022-06-15'],
-                    datatype='sqtn_rfs_V1V2',level = 'l3', 
-                    get_support_data=True, time_clip=True)
+trange = ['2025-09-10','2025-09-21']
 
-options('electron_density', 'ylog', True)
-options('electron_core_temperature', 'ylog', True)
+psp.fields(trange=trange,
+           datatype='sqtn_rfs_V1V2',level = 'l3', 
+           username = 'hello', password = 'world',
+           get_support_data=True, time_clip=True, prefix='psp_fld_l3_sqtn_rfs_V1V2')
 
-tplot(['electron_density','electron_core_temperature'])
+psp.fields(trange=trange,
+           datatype='sqtn_rfs_V3V4',level = 'l3', 
+           username = 'hello', password = 'world',
+           get_support_data=True, time_clip=True, prefix='psp_fld_l3_sqtn_rfs_V3V4')
+
+options('*electron_density', 'ylog', True)
+options('*electron_core_temperature', 'ylog', True)
+
+tplot(['*electron_density','*electron_core_temperature'])
