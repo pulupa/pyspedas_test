@@ -47,6 +47,15 @@ pprint(meta['CDF']['VATT']['FIELDNAM'])
 pprint(meta['CDF']['VATT']['CATDESC'])
 pprint(meta['CDF']['VATT']['UNITS'])
 
+# Print CATDESC for each variable
+
+for var in tnames():
+    meta = get_data(var, metadata = True)
+    print("\n")
+    pprint(var)
+    if isinstance(meta, dict):
+       pprint(meta['CDF']['VATT']['CATDESC'])
+
 # Create a pandas DataFrame
 
 df = pd.DataFrame(data)
