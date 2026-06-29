@@ -2,6 +2,7 @@ import pyspedas.projects.psp as psp
 from pyspedas import tnames, tplot, options, get_data, tplot_names, time_string
 import numpy as np
 import pandas as pd
+from pprint import pprint
 
 # Load the F2 100bps data
 
@@ -11,7 +12,7 @@ psp.fields(trange=['2025-06-14/00:00','2025-06-25/00:00'],
 
 # Print the list of variables
 
-print(tnames())
+pprint(tnames())
 
 # The DFB VDC variables are included in the list
 # Before we plot, change the colors so we can tell them apart
@@ -31,6 +32,20 @@ tplot(['PSP_FLD_L2_F2_100bps_DFB_VDC_V1',
 # Extract the V1 data
 
 time, data = get_data('PSP_FLD_L2_F2_100bps_DFB_VDC_V1')
+
+# Examine the CDF metadata
+meta = get_data('PSP_FLD_L2_F2_100bps_DFB_VDC_V1', metadata = True)
+
+# Full structure
+
+pprint(meta)
+
+# A few attributes describing this variable
+# (see the ISTP Metadata Guidelines for attribute definitions)
+
+pprint(meta['CDF']['VATT']['FIELDNAM'])
+pprint(meta['CDF']['VATT']['CATDESC'])
+pprint(meta['CDF']['VATT']['UNITS'])
 
 # Create a pandas DataFrame
 
