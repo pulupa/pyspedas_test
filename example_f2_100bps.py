@@ -51,7 +51,7 @@ pprint(meta['CDF']['VATT']['UNITS'])
 
 for var in tnames():
     meta = get_data(var, metadata = True)
-    print("\n")
+    print("\n" )
     pprint(var)
     if isinstance(meta, dict):
        pprint(meta['CDF']['VATT']['CATDESC'])
